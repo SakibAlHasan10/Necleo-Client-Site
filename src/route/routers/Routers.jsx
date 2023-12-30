@@ -7,6 +7,7 @@ import ProjectsDetails from "../../Pages/projectsDetails/ProjectsDetails";
 import DashboardCard from "../../Pages/dashboard/DashboardCard";
 import AddProject from "../../Pages/addProject/AddProject";
 import MyProjectsDetails from "../../Pages/myProjects/MyProjectsDetails";
+import UpdateProject from "../../Pages/updateProject/UpdateProject";
 
 const route = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const route = createBrowserRouter([
                         element:<MyProjects/>
                     },
                     {
-                        path:"projects/:id",
+                        path:"my-projects/:id",
                         element:<MyProjectsDetails/>
                     },
                     {
@@ -40,6 +41,10 @@ const route = createBrowserRouter([
                     {
                         path:"sample-projects",
                         element:<AddProject/>
+                    },
+                    {
+                        path:"update/:id",
+                        element:<UpdateProject/>
                     }
                 ]
             }

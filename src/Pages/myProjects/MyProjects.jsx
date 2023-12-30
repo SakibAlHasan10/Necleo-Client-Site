@@ -31,7 +31,7 @@ return (
 
         {
             data?.map(card=><div key={card._id} >
-                <Link to={`/dashboard/projects/${card._id}`}>
+                <Link to={`/dashboard/my-projects/${card._id}`}>
                 <div className="rounded-[10px] bg-white p-4">
                 <img src={card.download_url} alt="" className="rounded-[10px]" />
                 </div>

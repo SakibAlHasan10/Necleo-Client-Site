@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../hooks/axiosPublic/useAxiosPublic";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Button } from "@mui/material";
 import Swal from "sweetalert2";
 
@@ -19,11 +19,12 @@ const MyProjectsDetails = () => {
       return res?.data;
     },
   });
-  const { download_url, author, description } = data;
+  const { download_url, author, description, _id } = data;
   // console.log(id, data)
-  if (isPending) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
+  // data fetching loading
+  if (isPending) return <p className="text-center mt-52 text-xl">Loading...</p>;
+  // data fetching error
+  if (error) return <p className="text-center mt-52 text-xl">An error has occurred: ${error.message}</p>;
   const handleDelete = async () => {
     Swal.fire({
       title: "Are you sure?",
@@ -53,10 +54,12 @@ const MyProjectsDetails = () => {
       <div>
         <img src={download_url} alt="" className="w-8/12 h-full rounded-xl" />
         <div className="gap-10 flex mt-6">
-          <Button variant="contained" >
-            Update Project
+          <Link to={`/dashboard/update/${_id}`}>
+            <Button variant="contained">Update Project</Button>
+          </Link>
+          <Button variant="contained" onClick={handleDelete}>
+            Delete Project
           </Button>
-          <Button variant="contained" onClick={handleDelete}>Delete Project</Button>
         </div>
         <h4 className="text-2xl font-bold mt-5 mb-3">{author}</h4>
         <p>{description}</p>

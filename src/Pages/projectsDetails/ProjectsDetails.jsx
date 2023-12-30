@@ -14,9 +14,10 @@ const ProjectsDetails = () => {
     })
     const {download_url, author}=data;
     // console.log(id, data)
-      if (isPending) return 'Loading...'
-
-      if (error) return 'An error has occurred: ' + error.message
+      // data fetching loading
+  if (isPending) return <p className="text-center mt-52 text-xl">Loading...</p>;
+  // data fetching error
+  if (error) return <p className="text-center mt-52 text-xl">An error has occurred: ${error.message}</p>;
     
     return (
         <div className="p-7">
