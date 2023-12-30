@@ -59,8 +59,16 @@ const DashboardRoute = () => {
         <List aria-label="main mailbox folders">
           <ListItemLink
             to="/dashboard"
-            primary="My Profile"
-            icon={<AccountBoxIcon />}
+            primary="My Projects"
+            icon={<Box
+              component="img"
+              sx={{
+                height: 28,
+                width: 28,
+              }}
+              alt="logo"
+              src="/src/assets/9055184_bxs_coin_stack_icon 1.png"
+            />}
           />
           <ListItemLink
             to="/dashboard/add-product"
