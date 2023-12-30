@@ -21,11 +21,11 @@ const DashboardCard = () => {
 
   // console.log(data)
   // data fetching loading
-  if (isPending) return "Loading...";
+  if (isPending) return <p className="text-center mt-52 text-xl">Loading...</p>;
   // data fetching error
-  if (error) return "An error has occurred: " + error.message;
+  if (error) return <p className="text-center mt-52 text-xl">An error has occurred: ${error.message}</p>;
   return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
         {/* data map and data passing Card component */}
         {data?.map((card) => (
           <Card key={card?._id} card={card} />

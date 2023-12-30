@@ -9,7 +9,7 @@ import ListItemText from "@mui/material/ListItemText";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { Link as RouterLink, MemoryRouter } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
-import { Add, ProductionQuantityLimits } from "@mui/icons-material";
+import { Add } from "@mui/icons-material";
 import { Divider } from "@mui/material";
 import { FaDatabase } from "react-icons/fa";
 function Router(props) {
@@ -54,13 +54,13 @@ ListItemLink.propTypes = {
 
 const DashboardRoute = () => {
   return (
-    <Box sx={{ width: 360 }}>
+    <Box sx={{ width: 360,}}>
       <Paper elevation={0}>
-        <List aria-label="main mailbox folders">
+        <List aria-label="main mailbox folders" sx={{ color:"#C4C4C4"}}>
           <ListItemLink
             to="/dashboard/my-project"
             primary="My Projects"
-            icon={<FaDatabase />}
+            icon={<FaDatabase className="text-[#C4C4C4]"/>}
           />
           <ListItemLink
             to="/dashboard/sample-projects"
@@ -68,22 +68,37 @@ const DashboardRoute = () => {
             icon={<Add />}
           />
         </List>
+        <List sx={{ width: 350, px:2 }}>
+
         <Divider />
-        <List aria-label="main mailbox folders">
+        </List>
+        <List aria-label="main mailbox folders" sx={{ color:"#C4C4C4"}}>
           <ListItemLink
             to="/dashboard"
-            primary="My Profile"
+            primary="Apps"
             icon={<AccountBoxIcon />}
           />
           <ListItemLink
-            to="/dashboard/add-product"
-            primary="Add Products"
+            to="/dashboard"
+            primary="Intro to Necleo"
+            icon={<Add />}
+          />
+        </List>
+        <List aria-label="main mailbox folders" sx={{ color:"#C4C4C4"}}>
+          <ListItemLink
+            to="/dashboard"
+            primary="Help & Support"
+            icon={<AccountBoxIcon />}
+          />
+          <ListItemLink
+            to="/dashboard"
+            primary="Feedback"
             icon={<Add />}
           />
           <ListItemLink
-            to="/dashboard/my-products"
-            primary="My Products"
-            icon={<ProductionQuantityLimits />}
+            to="/dashboard"
+            primary="Collapse"
+            icon={<Add />}
           />
         </List>
       </Paper>

@@ -157,9 +157,8 @@ const Dashboard = () => {
         </DrawerHeader>
         <Divider />
         <DashboardRoute />
-        <Divider />
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, bgcolor:"#F8F8F8"}}>
         <DrawerHeader />
         <Outlet />
       </Box>
