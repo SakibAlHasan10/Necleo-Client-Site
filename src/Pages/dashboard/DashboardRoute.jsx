@@ -58,19 +58,14 @@ const DashboardRoute = () => {
       <Paper elevation={0}>
         <List aria-label="main mailbox folders">
           <ListItemLink
-            to="/dashboard"
+            to="/dashboard/my-project"
             primary="My Projects"
             icon={<FaDatabase />}
           />
           <ListItemLink
-            to="/dashboard/add-product"
-            primary="Add Products"
+            to="/dashboard/sample-projects"
+            primary="Sample Projects"
             icon={<Add />}
-          />
-          <ListItemLink
-            to="/dashboard/my-products"
-            primary="My Products"
-            icon={<ProductionQuantityLimits />}
           />
         </List>
         <Divider />

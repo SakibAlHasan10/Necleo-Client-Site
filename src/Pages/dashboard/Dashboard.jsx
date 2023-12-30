@@ -89,7 +89,6 @@ const Dashboard = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  // const
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
