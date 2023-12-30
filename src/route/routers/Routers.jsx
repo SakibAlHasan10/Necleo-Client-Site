@@ -3,6 +3,7 @@ import Root from "../../Pages/root/Root";
 import Home from "../../Pages/home/Home";
 import Dashboard from "../../Pages/dashboard/Dashboard";
 import MyProjects from "../../Pages/myProjects/MyProjects";
+import ProjectsDetails from "../../Pages/projectsDetails/ProjectsDetails";
 
 const route = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const route = createBrowserRouter([
                     {
                         path:"",
                         element:<MyProjects/>
+                    },
+                    {
+                        path:"projects/:id",
+                        element:<ProjectsDetails/>
                     }
                 ]
             }

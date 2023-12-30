@@ -11,7 +11,7 @@ import { Link as RouterLink, MemoryRouter } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { Add, ProductionQuantityLimits } from "@mui/icons-material";
 import { Divider } from "@mui/material";
-
+import { FaDatabase } from "react-icons/fa";
 function Router(props) {
   const { children } = props;
   if (typeof window === "undefined") {
@@ -60,15 +60,7 @@ const DashboardRoute = () => {
           <ListItemLink
             to="/dashboard"
             primary="My Projects"
-            icon={<Box
-              component="img"
-              sx={{
-                height: 28,
-                width: 28,
-              }}
-              alt="logo"
-              src="/src/assets/9055184_bxs_coin_stack_icon 1.png"
-            />}
+            icon={<FaDatabase />}
           />
           <ListItemLink
             to="/dashboard/add-product"
