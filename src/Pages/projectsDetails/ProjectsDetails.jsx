@@ -12,17 +12,17 @@ const ProjectsDetails = () => {
             return res?.data;
         },
     })
-    const {download_url}=data;
+    const {download_url, author}=data;
     // console.log(id, data)
       if (isPending) return 'Loading...'
 
       if (error) return 'An error has occurred: ' + error.message
     
     return (
-        <div>
+        <div className="p-7">
             <div>
-                <img src={download_url} alt="" className="w-full h-full rounded-xl" />
-                
+                <img src={download_url} alt="" className="w-8/12 h-full rounded-xl" />
+                <h4 className="text-2xl font-bold mt-6">{author}</h4>
             </div>
         </div>
     );

@@ -6,6 +6,7 @@ import MyProjects from "../../Pages/myProjects/MyProjects";
 import ProjectsDetails from "../../Pages/projectsDetails/ProjectsDetails";
 import DashboardCard from "../../Pages/dashboard/DashboardCard";
 import AddProject from "../../Pages/addProject/AddProject";
+import MyProjectsDetails from "../../Pages/myProjects/MyProjectsDetails";
 
 const route = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const route = createBrowserRouter([
                     {
                         path:"my-project",
                         element:<MyProjects/>
+                    },
+                    {
+                        path:"projects/:id",
+                        element:<MyProjectsDetails/>
                     },
                     {
                         path:"projects/:id",
