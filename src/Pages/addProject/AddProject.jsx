@@ -26,18 +26,19 @@ const AddProject = () => {
     // console.log(project)
     //   create projects
       const pro = await axiosPublic.post("/projects", project);
-      if(pro.statusText==="OK"){
+      // console.log(pro)
+      if(pro.data.acknowledged===true){
         toast.success("Project create successfully")
         navigate('/dashboard/my-project')
       }
 
     }
   return (
-    <Box sx={{p:3, height:"88vh"}}>
+    <Box sx={{px:3,py:1, height:"82vh",}}>
       <Typography textAlign={"center"} sx={{ fontWeight: "800", fontSize:{xs:"30px",md:"42px"} }}>
       Sample Project
       </Typography>
-      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 8 }}>
+      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
         <Container sx={{ display: "flex", gap: "20px" }}>
           {/* product section */}
           <Grid container spacing={2}>

@@ -52,7 +52,7 @@ const MyProjectsDetails = () => {
   return (
     <div className="p-7">
       <div>
-        <img src={download_url} alt="" className="w-full md:w-8/12 h-full rounded-xl" />
+        <img src={download_url} alt="" className="w-full md:w-10/12 lg:w-8/12 h-full rounded-xl" />
         <div className="gap-10 flex mt-6">
           <Link to={`/dashboard/update/${_id}`}>
             <Button variant="contained">Update Project</Button>

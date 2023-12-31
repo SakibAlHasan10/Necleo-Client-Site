@@ -49,11 +49,11 @@ const UpdateProduct = () => {
     //   console.log(pro)
     }
   return (
-    <Box sx={{p:3, height:"88vh"}}>
+    <Box sx={{p:3,py:1, height:"88vh"}}>
       <Typography textAlign={"center"} sx={{ fontWeight: "800", fontSize:{xs:"30px",md:"42px"} }}>
       Update Project
       </Typography>
-      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 8 }}>
+      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 4 }}>
         <Container sx={{ display: "flex", gap: "20px" }}>
           {/* product section */}
           <Grid container spacing={2}>
