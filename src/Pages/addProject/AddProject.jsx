@@ -34,7 +34,7 @@ const AddProject = () => {
     }
   return (
     <Box sx={{p:3, height:"88vh"}}>
-      <Typography textAlign={"center"} sx={{ fontWeight: "800", fontSize:"42px" }}>
+      <Typography textAlign={"center"} sx={{ fontWeight: "800", fontSize:{xs:"30px",md:"42px"} }}>
       Sample Project
       </Typography>
       <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 8 }}>

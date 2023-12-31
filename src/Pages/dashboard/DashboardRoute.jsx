@@ -6,12 +6,13 @@ import ListItem from "@mui/material/ListItem";
 import Paper from "@mui/material/Paper";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import { Link as RouterLink, MemoryRouter } from "react-router-dom";
+import { Link as RouterLink, MemoryRouter, NavLink } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
-import { Add } from "@mui/icons-material";
 import { Divider } from "@mui/material";
-import { FaDatabase } from "react-icons/fa";
+import { FaDatabase, FaPlayCircle } from "react-icons/fa";
+import { TbAppsFilled, TbLayoutSidebarLeftCollapseFilled } from "react-icons/tb";
+import { RiAppsFill } from "react-icons/ri";
+import { MdHelp, MdFeedback } from "react-icons/md";
 function Router(props) {
   const { children } = props;
   if (typeof window === "undefined") {
@@ -56,50 +57,132 @@ const DashboardRoute = () => {
   return (
     <Box sx={{ width: 360,}}>
       <Paper elevation={0}>
-        <List aria-label="main mailbox folders" sx={{ color:"#C4C4C4"}}>
-          <ListItemLink
-            to="/dashboard/my-project"
-            primary="My Projects"
-            icon={<FaDatabase className="text-[#C4C4C4]"/>}
-          />
-          <ListItemLink
-            to="/dashboard/sample-projects"
-            primary="Sample Projects"
-            icon={<Add />}
-          />
+        <List
+          aria-label="main mailbox folders"
+          sx={{ color: "#C4C4C4", mr:"30px", mx: "20px", my: "20px" }}
+        >
+          <NavLink
+            to={`/dashboard/my-project`}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active text-[#FA782F]"
+                : isPending
+                ? "pending"
+                : "text-[#C4C4C4]"
+            }
+          >
+            {/* other code */}
+            <span className=" flex gap-[16px] md:gap-6 text-sm font-semibold items-center">
+              <FaDatabase className="w-7 h-7" />
+              My Projects
+            </span>
+          </NavLink>
+          <NavLink
+            to={`/dashboard/sample-projects`}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active text-[#FA782F]"
+                : isPending
+                ? "pending"
+                : "text-[#C4C4C4]"
+            }
+          >
+            {/* other code */}
+            <span className=" flex gap-[16px] md:gap-6 mt-7 text-sm font-semibold items-center">
+              <RiAppsFill className="w-7 h-7" />
+              Sample Projects
+            </span>
+          </NavLink>
         </List>
-        <List sx={{ width: 350, px:2 }}>
-
-        <Divider />
+          <Divider />
+        <List
+          aria-label="main mailbox folders"
+          sx={{ color: "#C4C4C4", ml: "20px", my: "20px" }}
+        >
+          <NavLink
+            to={`/`}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active text-[#FA782F]"
+                : isPending
+                ? "pending"
+                : "text-[#C4C4C4]"
+            }
+          >
+            {/* other code */}
+            <span className=" flex gap-[16px] md:gap-6 text-sm font-semibold items-center">
+              <TbAppsFilled className="w-7 h-7" />
+              Apps
+            </span>
+          </NavLink>
+          <NavLink
+            to={`/`}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active text-[#FA782F]"
+                : isPending
+                ? "pending"
+                : "text-[#C4C4C4]"
+            }
+          >
+            {/* other code */}
+            <span className=" flex gap-[16px] md:gap-6 mt-7 text-sm font-semibold items-center">
+              <FaPlayCircle className="w-7 h-7" />
+              Intro to Necleo
+            </span>
+          </NavLink>
         </List>
-        <List aria-label="main mailbox folders" sx={{ color:"#C4C4C4"}}>
-          <ListItemLink
-            to="/dashboard"
-            primary="Apps"
-            icon={<AccountBoxIcon />}
-          />
-          <ListItemLink
-            to="/dashboard"
-            primary="Intro to Necleo"
-            icon={<Add />}
-          />
-        </List>
-        <List aria-label="main mailbox folders" sx={{ color:"#C4C4C4"}}>
-          <ListItemLink
-            to="/dashboard"
-            primary="Help & Support"
-            icon={<AccountBoxIcon />}
-          />
-          <ListItemLink
-            to="/dashboard"
-            primary="Feedback"
-            icon={<Add />}
-          />
-          <ListItemLink
-            to="/dashboard"
-            primary="Collapse"
-            icon={<Add />}
-          />
+        <List
+          aria-label="main mailbox folders"
+          sx={{ color: "#C4C4C4", ml: "20px", mt:"80px", }}
+        >
+          <NavLink
+            to={`/`}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active text-[#FA782F]"
+                : isPending
+                ? "pending"
+                : "text-[#C4C4C4]"
+            }
+          >
+            {/* other code */}
+            <span className=" flex gap-[16px] md:gap-6 text-sm font-semibold items-center">
+              <MdHelp className="w-7 h-7" />
+              Help & Support
+            </span>
+          </NavLink>
+          <NavLink to={"/"}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active text-[#FA782F]"
+                : isPending
+                ? "pending"
+                : "text-[#C4C4C4]"
+            }
+          >
+            {/* other code */}
+            <span className=" flex gap-[16px] md:gap-6 mt-7 text-sm font-semibold items-center">
+              <MdFeedback className="w-7 h-7" />
+              Feedback
+            </span>
+          </NavLink>
+          <NavLink
+            to={`/`}
+            className={({ isActive, isPending }) =>
+              isActive
+                ? "active text-[#FA782F]"
+                : isPending
+                ? "pending"
+                : "text-[#000]"
+            }
+          >
+            {/* other code */}
+            <span className=" flex gap-[16px] md:gap-6 mt-7 text-sm font-semibold items-center">
+              <TbLayoutSidebarLeftCollapseFilled  className="w-7 h-7" />
+              Collapse
+            </span>
+          </NavLink>
         </List>
       </Paper>
     </Box>

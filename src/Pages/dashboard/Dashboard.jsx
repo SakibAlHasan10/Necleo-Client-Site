@@ -5,7 +5,6 @@ import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -13,7 +12,9 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Outlet } from "react-router-dom";
 import DashboardRoute from "./DashboardRoute";
-
+import { BiSolidDownArrow } from "react-icons/bi";
+import logo from "../../assets/logo.png"
+import avatar from "../../assets/Ellipse 1.png"
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -83,17 +84,20 @@ const Dashboard = () => {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  // console.log(open)
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ bgcolor: "#fff", zIndex:{sm:1100} }} open={open}>
-        <Toolbar>
+        <Toolbar sx={{display:"flex", justifyContent:"space-between"}}>
+          <Box sx={{display:"flex", alignItems:"center"}}>
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -101,11 +105,10 @@ const Dashboard = () => {
             edge="start"
             sx={{
                 zIndex:0,
-              marginRight: 5,
+              marginRight: 1,
               color: "#000",
-              ...(open
-                ? { display:"none"  }
-                : { display: { md: "none" } }),
+              display:"none",
+              ...(open && { display: "none" }),
             }}
           >
             <MenuIcon />
@@ -117,36 +120,37 @@ const Dashboard = () => {
               width: 77,
             }}
             alt="logo"
-            src="/src/assets/logo.png"
+            src={logo}
           />
-          {/* <Typography variant="h6" noWrap component="div">
-            Dashboard
-          </Typography> */}
+          </Box>
+          <div className="text-black flex items-center gap-[14px]">
+            <div>
+              <div className="flex">
+                <h4 className="text-sm text-black mr-3 pr-3 font-medium border-r-2 border-black">Free Trial</h4>
+                <p className="text-[10px] font-normal">2days left</p>
+              </div>
+              <p className="text-[#FA782F] mt-2 text-[10px] font-normal">Extend free trail</p>
+            </div>
+            <div className="flex gap-3 items-center">
+              <img src={avatar} alt="avatar" className="w-9 h-9" />
+              <BiSolidDownArrow />
+            </div>
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer 
-      variant="permanent" 
-      // open={open}
-  //   sx={{
-  //     zIndex:1300,
-  //   marginRight: 5,
-  //   color: "#000",
-  //   ...(open
-  //     ? { display:"none"  }
-  //     : { display: { md: "none" } }),
-  // }}
-    sx={{
-        zIndex:0,
-        // md:open,
-        ...(open
-              ? { display:{ sx: "block" } }
-              : { display: {sx:"none", md: "block" } })
-        // display: { xs: 'none', sm: 'block' },
-        // '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-      }}
-      open
+      variant="permanent"
+      open={open}
+      sx={{
+      zIndex:0,
+      // zIndex:1300,
+    color: "#000",
+    ...(open
+      ? { display:"none"  }
+      : { display: { md: "block" } }),
+  }}
       >
-        <DrawerHeader>
+        <DrawerHeader sx={{color: "#000",}}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />

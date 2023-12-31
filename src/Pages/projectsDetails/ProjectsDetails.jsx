@@ -22,7 +22,7 @@ const ProjectsDetails = () => {
     return (
         <div className="p-7">
             <div>
-                <img src={download_url} alt="" className="w-8/12 h-full rounded-xl" />
+                <img src={download_url} alt="" className="w-full md:w-8/12 h-full rounded-xl" />
                 <h4 className="text-2xl font-bold mt-6">{author}</h4>
             </div>
         </div>

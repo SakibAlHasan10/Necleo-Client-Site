@@ -40,9 +40,9 @@ return (
         }
     </div>
 
-        <div className="text-center w-[404px] h-[265px] p-[22px] bg-white rounded-[10px] mb-14">
+        <div className="text-center w-[300px] md:w-[404px] h-[265px] p-[22px] bg-white rounded-[10px] mb-14">
             <Link to={"/dashboard/sample-projects"}>
-            <div className="bg-[#fa782f66] w-[360px] h-[180px] rounded-[10px]">
+            <div className="bg-[#fa782f66] w-[260px] md:w-[360px] h-[180px] rounded-[10px]">
                 <div className="flex justify-center items-center h-full">
                 <img src={img} alt="sample project" className="w-[53px] h-[53px]" />
                 </div>
